@@ -1,0 +1,13 @@
+---
+- hosts: fili
+  become: true
+  tasks:
+    - name: Install EPEL repository
+      ansible.builtin.dnf:
+        name: epel-release
+        state: present
+
+    - name: Install cowsay package
+      ansible.builtin.dnf:
+        name: cowsay
+        state: present
