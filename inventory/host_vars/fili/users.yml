@@ -1,0 +1,4 @@
+---
+app_user: vaclav
+app_ssh_keys:
+  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE0KJicpzwCmtFG2xuNEZ1pDikN7P4kGGfcyPYqNXkdz vaclav8moucha@gmail.com"

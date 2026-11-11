@@ -1,0 +1,17 @@
+---
+- hosts: fili
+  become: true
+  tasks:
+    - name: Zajisteni ze uzivatel existuje a zakazuje updatovat hesla
+      ansible.builtin.user:
+        name: "{{ app_user }}"
+        state: present
+        update_password: on_create
+
+    - name: Nastaveni klicu
+      ansible.builtin.authorized_key:
+        user: "{{ app_user }}"
+        key: "{{ item }}"
+        state: present
+        exclusive: true
+      loop: "{{ app_ssh_keys }}"
